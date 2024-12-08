@@ -10,8 +10,7 @@ def load_data(file_path: str) -> Tuple[pd.DataFrame, pd.DataFrame]:
     :return: Retorna un tuple amb dos elements. El primer element és un DataFrame de Pandas amb les dades d'entrada, i el segon element és un DataFrame de Pandas amb les dades de sortida.
     """
 
-    df = pd.read_csv(file_path)
-    df = df.dropna() # Eliminem files amb valors nuls
+    df = pd.read_csv(file_path) # Carreguem les dades del fitxer CSV
 
     # Per columnes amb valors binaris, fem un map per convertir-los a 0 i 1
     df["gender"] = df["gender"].map({"Male": 1, "Female": 0})
@@ -20,6 +19,8 @@ def load_data(file_path: str) -> Tuple[pd.DataFrame, pd.DataFrame]:
 
     # Per columnes categoriques, fem un one-hot encoding
     df = pd.get_dummies(df, columns=["smoking_status", "work_type"])
+    
+    df = df.dropna() # Eliminem files amb valors nuls
 
     # Separem entre dades d'entrada i sortida
     X = df.drop(columns=["id", "stroke"])
