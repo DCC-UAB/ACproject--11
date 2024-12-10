@@ -1,5 +1,6 @@
 import pandas as pd
 from typing import Tuple
+from imblearn.over_sampling import SMOTE
 
 
 def limit_rows(df: pd.DataFrame, limit: int) -> pd.DataFrame:
@@ -48,12 +49,17 @@ def load_data(file_path: str) -> Tuple[pd.DataFrame, pd.DataFrame]:
 
     df = df.dropna()  # Eliminem files amb valors nuls
 
-    positius = df["stroke"].sum()
-    df = balance_data(df, "stroke", positius)  # Equilibrem les dades
+
+    #positius = df["stroke"].sum()
+    #df = balance_data(df, "stroke", positius)  # Equilibrem les dades
+
 
     # Separem entre dades d'entrada i sortida
     X = df.drop(columns=["id", "stroke"])
     y = df["stroke"]
+
+    smote = SMOTE(random_state = 10)
+    X, y = smote.fit_resample(X, y)
 
     return X, y
 
