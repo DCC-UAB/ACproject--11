@@ -53,3 +53,4 @@ Aquest dataset conté informació com:
 - Fer la ROC CURVE a tots els models 
 - Fer la comparació de les ROC Curves de cada model
 - Prova amb menys caracteristiques
+- Opcional: Fer servir LaTex per informe
