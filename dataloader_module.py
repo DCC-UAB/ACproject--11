@@ -1,7 +1,5 @@
 import pandas as pd
 from typing import Tuple
-from imblearn.over_sampling import SMOTE
-
 
 def limit_rows(df: pd.DataFrame, limit: int) -> pd.DataFrame:
     """
