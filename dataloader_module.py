@@ -56,9 +56,6 @@ def load_data(file_path: str) -> Tuple[pd.DataFrame, pd.DataFrame]:
     X = df.drop(columns=["id", "stroke"])
     y = df["stroke"]
 
-    smote = SMOTE(random_state = 10)
-    X, y = smote.fit_resample(X, y)
-
     return X, y
 
 
