@@ -47,6 +47,9 @@ Aquest dataset conté informació com:
 
 ### Feedback:
 
-- SMOTE mirar parametres
+- SMOTE mirar parametres (treure) 
 - Data balancing nomes train (test opcional)
-- Class weight logistic regression
+- Class weight logistic regression 
+- Fer la ROC CURVE a tots els models 
+- Fer la comparació de les ROC Curves de cada model
+- Prova amb menys caracteristiques
