@@ -2,6 +2,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 from typing import Tuple
 import matplotlib.pyplot as plt
 import seaborn as sns
+import numpy as np
 
 def metrics(y_test: list, y_pred: list, print_metrics: bool = False) -> Tuple[float, float, float, float, list]:
     """
@@ -20,14 +21,21 @@ def metrics(y_test: list, y_pred: list, print_metrics: bool = False) -> Tuple[fl
     cm = confusion_matrix(y_test, y_pred)
     
     if print_metrics:
-        print(f"Accuracy: {acc:.4f}",)
+        print(f"Accuracy: {acc:.4f}")
         print(f"Precision: {prec:.4f}")
         print(f"Recall: {rec:.4f}")
         print(f"F1 Score: {f1:.4f}")
     
         plt.figure(figsize=(5, 5))
-        sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=['0','1'], yticklabels=['0','1'])   
-        plt.ylabel('True')
+        sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=['0','1'], yticklabels=['0','1'], annot_kws={"size": 0})
+        
+        # Add TP, TN, FP, FN labels
+        for i in range(2):
+            for j in range(2):
+                plt.text(j + 0.5, i + 0.5, f"{cm[i, j]}\n{'TP' if i == j == 1 else 'TN' if i == j == 0 else 'FP' if i == 0 else 'FN'}",
+                         ha='center', va='center', color='black', fontsize=12)
+        
+        #plt.ylabel('True')
         plt.title('Confusion Matrix Heatmap')
 
         plt.tight_layout()

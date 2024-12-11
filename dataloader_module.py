@@ -1,5 +1,6 @@
 import pandas as pd
 from typing import Tuple
+from imblearn.over_sampling import SMOTE
 
 def limit_rows(df: pd.DataFrame, limit: int) -> pd.DataFrame:
     """
@@ -51,12 +52,23 @@ def load_data(file_path: str) -> Tuple[pd.DataFrame, pd.DataFrame]:
     #positius = df["stroke"].sum()
     #df = balance_data(df, "stroke", positius)  # Equilibrem les dades
 
-
     # Separem entre dades d'entrada i sortida
     X = df.drop(columns=["id", "stroke"])
     y = df["stroke"]
 
     return X, y
+
+def resample_data(X: pd.DataFrame, y: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:
+    """
+    Donades les dades d'entrada i sortida, retorna les dades d'entrada i sortida amb les classes balancejades.
+
+    :param X: Dades d'entrada.
+    :param y: Dades de sortida.
+    :return: Retorna un tuple amb dos elements. El primer element és un DataFrame de Pandas amb les dades d'entrada, i el segon element és un DataFrame de Pandas amb les dades de sortida.
+    """
+    smote = SMOTE(random_state=42)
+    X_res, y_res = smote.fit_resample(X, y)
+    return X_res, y_res
 
 
 if __name__ == "__main__":
