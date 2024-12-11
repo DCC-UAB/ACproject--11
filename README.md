@@ -47,9 +47,6 @@ Aquest dataset conté informació com:
 
 ### Feedback:
 
-- ficar recol, R2 etc (confusion matrix), metricas
-- fer svm
-- resoldre bmi
-- fer tsne, pca
-- crear variable binaria per obesitat/normal (o mes) 
-- fer amb les variables binaries d'obesitat
+- SMOTE mirar parametres
+- Data balancing nomes train (test opcional)
+- Class weight logistic regression
