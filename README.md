@@ -50,7 +50,9 @@ Aquest dataset conté informació com:
 - SMOTE mirar parametres (treure) 
 - Data balancing nomes train (test opcional)
 - Class weight logistic regression 
-- Fer la ROC CURVE a tots els models 
+- Fer la ROC CURVE a tots els models i prova amb menys caracteristiques
 - Fer la comparació de les ROC Curves de cada model
-- Prova amb menys caracteristiques
+    Fer per cada model full i reduced!!!
+NOMES SHAN FET LES ROC I LA REDUCCIÓ DE CARACTERÍSTIQUES AL NAIVE BAYES, TREE I LOGISTIC REGRESSION!!!
 - Opcional: Fer servir LaTex per informe
+- Fer la comparació general amb full i reduced (no per parelles) 
