@@ -70,6 +70,15 @@ def resample_data(X: pd.DataFrame, y: pd.DataFrame) -> Tuple[pd.DataFrame, pd.Da
     X_res, y_res = smote.fit_resample(X, y)
     return X_res, y_res
 
+def extreure_columnes(X: pd.DataFrame, y: pd.DataFrame): 
+    columns_to_drop = ["bmi", "avg_glucose_level", "age"]
+    X = X.drop(columns=columns_to_drop, errors='ignore')
+    X = X.replace([float('inf'), -float('inf')], 0)
+
+    X = X.dropna()
+    y = y.loc[X.index]
+
+    return X, y
 
 if __name__ == "__main__":
     X, y = load_data("data/healthcare-dataset-stroke-data.csv")
