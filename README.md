@@ -68,7 +68,7 @@ Els models mostren una disminució de la precisió quan es redueixen les caracte
 2. La priorització del recall és clau per minimitzar els falsos negatius, donada la gravetat d'un ictus no detectat.
 3. Els models Random Forest i XGBoost presenten el millor compromís entre recall i precisió.
 
-### **MilloraFutura**
+### **Millora Futura**
 1. Incorporar dades addicionals per augmentar la robustesa dels models, especialment de casos positius (ictus).
 
 ## **Estructura del Repositori**
