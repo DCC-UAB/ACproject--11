@@ -73,12 +73,11 @@ Els models mostren una disminució de la precisió quan es redueixen les caracte
 
 ## **Estructura del Repositori**
 ```plaintext
-├── analysis/                 # Notebooks que ofereixen plots utilitzats com a resultats i per analitzar
 ├── data/                     # Conté el dataset
-├── modules/                  # Conté moduls personalitzats utilitzats en el projecte
 ├── not_implemented/          # Scripts o idees que no es van arribar a implementar pel temps o complexitat
-├── notebooks_models/         # Notebooks dels diferents models utilitzats en el projecte per predir ictus
+├── notebooks_and_scripts/    # Notebooks dels diferents models utilitzats en el projecte per predir ictus
 ├── ROC_Data/                 # Conjunt de dades utilitzats per representar les ROC Curves
+├── .gitignore                # Fitxer que exclou arxius del control de versions
 ├── README.md                 # Documentació principal
 └── requirements.txt          # Llista de dependències 
 ```
