@@ -71,7 +71,7 @@ def resample_data(X: pd.DataFrame, y: pd.DataFrame) -> Tuple[pd.DataFrame, pd.Da
     return X_res, y_res
 
 def extreure_columnes(X: pd.DataFrame, y: pd.DataFrame): 
-    columns_to_drop = ["bmi", "avg_glucose_level", "age"]
+    columns_to_drop = ["hypertension", "avg_glucose_level","bmi","heart_disease","obesity"]
     X = X.drop(columns=columns_to_drop, errors='ignore')
     X = X.replace([float('inf'), -float('inf')], 0)
 
