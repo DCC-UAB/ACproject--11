@@ -29,7 +29,7 @@ def metrics(y_test: list, y_pred: list, print_metrics: bool = False) -> Tuple[fl
         plt.figure(figsize=(5, 5))
         sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=['0','1'], yticklabels=['0','1'], annot_kws={"size": 0})
         
-        # Add TP, TN, FP, FN labels
+        # TP, TN, FP, FN labels
         for i in range(2):
             for j in range(2):
                 plt.text(j + 0.5, i + 0.5, f"{cm[i, j]}\n{'TP' if i == j == 1 else 'TN' if i == j == 0 else 'FP' if i == 0 else 'FN'}",
