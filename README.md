@@ -1,11 +1,14 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/USx538Ll)
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=17032340&assignment_repo_type=AssignmentRepo)
 
-
 # Detecció d'Ictus a Través de Models de Machine Learning
+
+---
 
 ## **Objectiu del Projecte**
 Aquest projecte té com a finalitat desenvolupar models de Machine Learning per detectar casos d'ictus (stroke) utilitzant dades clíniques. L'objectiu principal és determinar si els models poden identificar casos d'ictus amb precisió i si també poden fer-ho utilitzant exclusivament característiques que es poden mesurar a casa, sense la necessitat de proves mèdiques especialitzades. Aquest enfocament podria facilitar una detecció preliminar que permeti prevenir riscos de forma més accessible i eficient.
+
+---
 
 ## **Dataset Utilitzat**
 El dataset utilitzat prové de [Kaggle](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset) i conté dades de 5.110 pacients amb les següent característiques:
@@ -25,6 +28,8 @@ El dataset utilitzat prové de [Kaggle](https://www.kaggle.com/datasets/fedesori
 
 El dataset presentava un desbalanceig significatiu: només aproximadament 250 casos (5%) tenien `stroke = 1`. Aquest problema es va abordar aplicant **SMOTE** (Synthetic Minority Over-sampling Technique) per equilibrar les classes durant l'entrenament, garantint que les proves reflectissin la realitat i no un escenari artificialment balancejat.
 
+---
+
 ## **Llibreries Utilitzades**
 - `numpy`, `pandas`: Per a la gestió i manipulació de dades.
 - `scikit-learn`: Per a la divisó de dades, implementació de models i càlcul de mètriques.
@@ -34,6 +39,8 @@ El dataset presentava un desbalanceig significatiu: només aproximadament 250 ca
   - `dataloader_module`: Carrega i prepara les dades.
   - `metrics_module`: Calcula les mètriques necessàries.
   - `graphs_module`: Genera gràfics com ROC curves.
+
+---
 
 ## **Models de Classificació Provats**
 1. Logistic Regression
@@ -45,6 +52,8 @@ El dataset presentava un desbalanceig significatiu: només aproximadament 250 ca
 
 Els models es van avaluar amb i sense les característiques que no són mesurables a casa "bmi", "avg_glucose_level", "age". Els criteris d'èxit incloïen la precisió (`accuracy`), el **recall** (prioritzat en aquest projecte), i l'àrea sota la corba ROC (AUC-ROC).
 
+---
+
 ## **Reproducció del Projecte**
 
 ### **Requisits**
@@ -53,6 +62,8 @@ Els models es van avaluar amb i sense les característiques que no són mesurabl
    ```bash
    pip install -r requirements.txt
    ```
+
+---
 
 ## **Resultats**
 Els resultats inclouen:
@@ -63,6 +74,8 @@ Els resultats inclouen:
 ### **Observació Inicial**
 Els models mostren una disminució de la precisió quan es redueixen les característiques, tot i que encara és possible detectar ictus amb una fiabilitat raonable. Els models Random Forest i XGBoost van ser els més robustos, especialment quan es prioritzava el recall.
 
+---
+
 ## **Conclusions**
 1. És possible detectar casos d'ictus amb dades mesurables a casa, tot i que amb menys precisió que quan s'inclouen totes les característiques.
 2. La priorització del recall és clau per minimitzar els falsos negatius, donada la gravetat d'un ictus no detectat.
@@ -70,6 +83,8 @@ Els models mostren una disminució de la precisió quan es redueixen les caracte
 
 ### **Millora Futura**
 1. Incorporar dades addicionals per augmentar la robustesa dels models, especialment de casos positius (ictus).
+
+---
 
 ## **Estructura del Repositori**
 ```plaintext
@@ -83,3 +98,5 @@ Els models mostren una disminució de la precisió quan es redueixen les caracte
 ```
 
 Aquest README serveix com a guia per reproduir i comprendre el projecte, amb l'objectiu d'oferir un anàlisi complet i transparent del treball realitzat.
+
+---
