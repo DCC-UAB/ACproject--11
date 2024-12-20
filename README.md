@@ -68,7 +68,9 @@ Els models es van avaluar amb i sense les característiques que no són mesurabl
 ## **Resultats**
 Els resultats inclouen:
 - **Mètriques** dels millors models seleccionats:
+
 ![Best metrics](extra_imgs/best_scores.png)
+
 - **Matrius de confusió** que mostren dels millors models:
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
   <img src="extra_imgs/log_reg_mtx.png" alt="Logistic Regression Confusion Matrix" width="400"/>
@@ -79,7 +81,9 @@ Els resultats inclouen:
 
 ![ROC Curves](notebooks_and_scripts/ROC_Data/ROC_comparison_full.png)
 ![ROC Curves reduced](notebooks_and_scripts/ROC_Data/ROC_comparison_reduced.png)
+
 - Comparatives de corbes ROC entre models:
+
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
   <img src="notebooks_and_scripts/ROC_Data/ROC_comparison_Logistic_Regression.png" alt="Logistic Regression ROC" width="400"/>
   <img src="notebooks_and_scripts/ROC_Data/ROC_comparison_KNN.png" alt="KNN ROC" width="400"/>
