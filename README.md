@@ -68,8 +68,10 @@ Els models es van avaluar amb i sense les característiques que no són mesurabl
 ## **Resultats**
 Els resultats inclouen:
 - **Matrius de confusió** que mostren dels millors models:
-![Logistic Regression Confusion Matrix](notebooks_and_scripts/log_reg_mtx.png)
-![XGBoost Confusion Matrix](notebooks_and_scripts/xgboost_mtx.png)
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <img src="notebooks_and_scripts/log_reg_mtx.png" alt="Logistic Regression Confusion Matrix" width="400"/>
+  <img src="notebooks_and_scripts/xgboost_mtx.png" alt="XGBoost Confusion Matrix" width="400"/>
+</div>
 - **ROC curves** que comparen tots els models amb les dades completes i amb les dades reduïdes:
 ![ROC Curves](notebooks_and_scripts/ROC_Data/ROC_comparison_full.png)
 ![ROC Curves reduced](notebooks_and_scripts/ROC_Data/ROC_comparison_reduced.png)
@@ -84,7 +86,7 @@ Els resultats inclouen:
 </div>
 
 ### **Observació Inicial**
-Els models mostren una disminució de la precisió quan es redueixen les característiques, tot i que encara és possible detectar ictus amb una fiabilitat raonable. Els models Random Forest i XGBoost van ser els més robustos, especialment quan es prioritzava el recall.
+Els models mostren una disminució de la precisió quan es redueixen les característiques, tot i que encara és possible detectar ictus amb una fiabilitat raonable. Els models de Regressió Logística i XGBoost van ser els més robustos, especialment quan es prioritzava el recall.
 
 ---
 
