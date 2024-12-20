@@ -72,7 +72,9 @@ Els resultats inclouen:
   <img src="notebooks_and_scripts/log_reg_mtx.png" alt="Logistic Regression Confusion Matrix" width="400"/>
   <img src="notebooks_and_scripts/xgboost_mtx.png" alt="XGBoost Confusion Matrix" width="400"/>
 </div>
+
 - **ROC curves** que comparen tots els models amb les dades completes i amb les dades reduïdes:
+
 ![ROC Curves](notebooks_and_scripts/ROC_Data/ROC_comparison_full.png)
 ![ROC Curves reduced](notebooks_and_scripts/ROC_Data/ROC_comparison_reduced.png)
 - Comparatives de corbes ROC entre models:
