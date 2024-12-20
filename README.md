@@ -44,9 +44,9 @@ El dataset presentava un desbalanceig significatiu: només aproximadament 250 ca
 
 ## **Models de Classificació Provats**
 1. Logistic Regression
-2. Random Forest
+2. K-Nearest Neighbors (KNN)
 3. Naive Bayes
-4. K-Nearest Neighbors (KNN)
+4. Random Forest
 5. AdaBoost
 6. XGBoost
 
@@ -67,9 +67,19 @@ Els models es van avaluar amb i sense les característiques que no són mesurabl
 
 ## **Resultats**
 Els resultats inclouen:
-- **ROC curves** que comparen tots els models amb les dades completes i amb les dades reduïdes.
-- **Matrius de confusió** que mostren l'eficàcia del recall per a cada model.
-- Comparatives d'AUC-ROC entre models.
+- **Matrius de confusió** que mostren dels millors models:
+![Logistic Regression Confusion Matrix](notebooks_and_scripts/log_reg_mtx.png)
+![XGBoost Confusion Matrix](notebooks_and_scripts/xgboost_mtx.png)
+- **ROC curves** que comparen tots els models amb les dades completes i amb les dades reduïdes:
+![ROC Curves](notebooks_and_scripts/ROC_Data/ROC_comparison_full.png)
+![ROC Curves reduced](notebooks_and_scripts/ROC_Data/ROC_comparison_reduced.png)
+- Comparatives de corbes ROC entre models:
+![Logistic Regression ROC](notebooks_and_scripts/ROC_Data/ROC_comparison_Logistic_Regression.png)
+![KNN ROC](notebooks_and_scripts/ROC_Data/ROC_comparison_KNN.png)
+![Naive Bayes ROC](notebooks_and_scripts/ROC_Data/ROC_comparison_Naive_Bayes.png)
+![Random Forest ROC](notebooks_and_scripts/ROC_Data/ROC_comparison_Random_Forest.png)
+![AdaBoost ROC](notebooks_and_scripts/ROC_Data/ROC_comparison_AdaBoost.png)
+![XGBoost ROC](notebooks_and_scripts/ROC_Data/ROC_comparison_XGBoost.png)
 
 ### **Observació Inicial**
 Els models mostren una disminució de la precisió quan es redueixen les característiques, tot i que encara és possible detectar ictus amb una fiabilitat raonable. Els models Random Forest i XGBoost van ser els més robustos, especialment quan es prioritzava el recall.
