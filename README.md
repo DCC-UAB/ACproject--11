@@ -89,9 +89,9 @@ Els models mostren una disminució de la precisió quan es redueixen les caracte
 ---
 
 ## **Conclusions**
-1. És possible detectar casos d'ictus amb dades mesurables a casa, tot i que amb menys precisió que quan s'inclouen totes les característiques.
+1. És possible detectar casos d'ictus amb dades que tenim, amb una Accuracy de 74% i un Recall del 89% per la regressió logística.
 2. La priorització del recall és clau per minimitzar els falsos negatius, donada la gravetat d'un ictus no detectat.
-3. Els models Random Forest i XGBoost presenten el millor compromís entre recall i precisió.
+3. És possible detectar ictus amb característiques mesurables a casa, encara que els valors de les mètriques disminueixin lleugerament, depenent del model.
 
 ### **Millora Futura**
 1. Incorporar dades addicionals per augmentar la robustesa dels models, especialment de casos positius (ictus).
