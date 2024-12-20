@@ -67,10 +67,12 @@ Els models es van avaluar amb i sense les característiques que no són mesurabl
 
 ## **Resultats**
 Els resultats inclouen:
+- **Mètriques** dels millors models seleccionats:
+![Best metrics](extra_imgs/best_scores.png)
 - **Matrius de confusió** que mostren dels millors models:
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-  <img src="notebooks_and_scripts/log_reg_mtx.png" alt="Logistic Regression Confusion Matrix" width="400"/>
-  <img src="notebooks_and_scripts/xgboost_mtx.png" alt="XGBoost Confusion Matrix" width="400"/>
+  <img src="extra_imgs/log_reg_mtx.png" alt="Logistic Regression Confusion Matrix" width="400"/>
+  <img src="extra_imgs/xgboost_mtx.png" alt="XGBoost Confusion Matrix" width="400"/>
 </div>
 
 - **ROC curves** que comparen tots els models amb les dades completes i amb les dades reduïdes:
