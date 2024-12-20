@@ -98,7 +98,7 @@ Els models mostren una disminució de la precisió quan es redueixen les caracte
 3. És possible detectar ictus amb característiques mesurables a casa, encara que els valors de les mètriques disminueixin lleugerament, depenent del model.
 
 ### **Millora Futura**
-1. Incorporar dades addicionals per augmentar la robustesa dels models, especialment de casos positius (ictus).
+1. Incorporar dades addicionals per augmentar la robustesa dels models, especialment de casos positius (ictus). Això inclou més tipus de dades (historial alimentari, activitat física, etc.), i cantitats més grans de dades de pacients amb ictus.
 
 ---
 
