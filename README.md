@@ -74,12 +74,14 @@ Els resultats inclouen:
 ![ROC Curves](notebooks_and_scripts/ROC_Data/ROC_comparison_full.png)
 ![ROC Curves reduced](notebooks_and_scripts/ROC_Data/ROC_comparison_reduced.png)
 - Comparatives de corbes ROC entre models:
-<img src="notebooks_and_scripts/ROC_Data/ROC_comparison_Logistic_Regression.png" alt="Logistic Regression ROC" width="300"/>
-<img src="notebooks_and_scripts/ROC_Data/ROC_comparison_KNN.png" alt="KNN ROC" width="300"/>
-<img src="notebooks_and_scripts/ROC_Data/ROC_comparison_Naive_Bayes.png" alt="Naive Bayes ROC" width="300"/>
-<img src="notebooks_and_scripts/ROC_Data/ROC_comparison_Random_Forest.png" alt="Random Forest ROC" width="300"/>
-<img src="notebooks_and_scripts/ROC_Data/ROC_comparison_AdaBoost.png" alt="AdaBoost ROC" width="300"/>
-<img src="notebooks_and_scripts/ROC_Data/ROC_comparison_XGBoost.png" alt="XGBoost ROC" width="300"/>
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <img src="notebooks_and_scripts/ROC_Data/ROC_comparison_Logistic_Regression.png" alt="Logistic Regression ROC" width="400"/>
+  <img src="notebooks_and_scripts/ROC_Data/ROC_comparison_KNN.png" alt="KNN ROC" width="400"/>
+  <img src="notebooks_and_scripts/ROC_Data/ROC_comparison_Naive_Bayes.png" alt="Naive Bayes ROC" width="400"/>
+  <img src="notebooks_and_scripts/ROC_Data/ROC_comparison_Random_Forest.png" alt="Random Forest ROC" width="400"/>
+  <img src="notebooks_and_scripts/ROC_Data/ROC_comparison_AdaBoost.png" alt="AdaBoost ROC" width="400"/>
+  <img src="notebooks_and_scripts/ROC_Data/ROC_comparison_XGBoost.png" alt="XGBoost ROC" width="400"/>
+</div>
 
 ### **Observació Inicial**
 Els models mostren una disminució de la precisió quan es redueixen les característiques, tot i que encara és possible detectar ictus amb una fiabilitat raonable. Els models Random Forest i XGBoost van ser els més robustos, especialment quan es prioritzava el recall.
