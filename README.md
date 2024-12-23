@@ -6,7 +6,7 @@
 ---
 
 ## **Objectiu del Projecte**
-Aquest projecte té com a finalitat desenvolupar models de Machine Learning per detectar casos d'ictus (stroke) utilitzant dades clíniques. L'objectiu principal és determinar si els models poden identificar casos d'ictus amb precisió i si també poden fer-ho utilitzant exclusivament característiques que es poden mesurar a casa, sense la necessitat de proves mèdiques especialitzades. Aquest enfocament podria facilitar una detecció preliminar que permeti prevenir riscos de forma més accessible i eficient.
+Aquest projecte té com a finalitat desenvolupar models de Machine Learning per detectar casos d'ictus (stroke) utilitzant dades clíniques. L'objectiu principal és determinar si els models poden identificar casos d'ictus amb precisió i si també poden fer-ho utilitzant exclusivament característiques que no es consideren del tipus médic. Aquest enfocament podria facilitar una detecció preliminar que permeti prevenir riscos de forma més accessible i eficient, així com permetre a les persones sense accessibilitat a recursos médics detectar si son proactius a patir un ictus.
 
 ---
 
@@ -42,17 +42,38 @@ El dataset presentava un desbalanceig significatiu: només aproximadament 250 ca
 
 ---
 
-## **Models de Classificació Provats**
+## **Models de Classificació Aplicats**
 1. Logistic Regression
-2. K-Nearest Neighbors (KNN)
+2. Random Forest
 3. Naive Bayes
-4. Random Forest
+4. K-Nearest Neighbors (KNN)
 5. AdaBoost
 6. XGBoost
 
-Els models es van avaluar amb i sense les característiques que no són mesurables a casa "bmi", "avg_glucose_level", "age". Els criteris d'èxit incloïen la precisió (`accuracy`), el **recall** (prioritzat en aquest projecte), i l'àrea sota la corba ROC (AUC-ROC).
+Els models es van avaluar amb i sense les característiques següents:
+- `bmi`
+- `obesity`
+- `avg_glucose_level`
+- `hypertension`
+- `heart_disease`
 
----
+Els criteris d'èxit incloïen la precisió (`accuracy`), el **recall** (prioritzat en aquest projecte), i l'àrea sota la corba ROC (AUC-ROC).
+
+## **Justificació de la No Implementació de Grid Search**
+
+Durant el desenvolupament del projecte, vam considerar la possibilitat d'utilitzar GridSearchCV per a la cerca d'hiperparàmetres amb l'objectiu de maximitzar tant el recall com l'accuracy de manera equilibrada. No obstant això, després de diverses proves i avaluacions, vam observar que la combinació d'aquestes dues mètriques en la cerca d'hiperparàmetres no produïa els resultats esperats.
+
+En concret, vam trobar que:
+
+- Mètriques Nefastes: Quan intentàvem maximitzar simultàniament el recall i l'accuracy, els models resultants presentaven   mètriques de rendiment subòptimes. Això es devia al fet que la combinació d'aquestes dues mètriques en una sola funció d'avaluació no reflectia adequadament el compromís necessari entre elles.
+
+- Compromís entre Recall i Accuracy: Maximitzar el recall sovint implica acceptar un major nombre de falsos positius, mentre que maximitzar l'accuracy pot implicar un compromís en la detecció de casos positius. Aquest compromís inherent va dificultar la cerca d'una configuració d'hiperparàmetres que equilibrés ambdues mètriques de manera satisfactòria.
+
+- Complexitat i Temps de Càlcul: La cerca d'hiperparàmetres amb GridSearchCV és computacionalment intensiva, especialment quan es treballa amb conjunts de dades grans i graelles d'hiperparàmetres extenses. Els resultats subòptims obtinguts no justificaven el temps i els recursos invertits en aquesta cerca.
+
+Per aquestes raons, vam decidir no implementar GridSearchCV en la nostra metodologia final. En lloc d'això, vam optar per ajustar-ho manualment a través del threshold, prioritzant el recall per assegurar-nos que els casos positius fossin detectats de manera efectiva, mentre manteníem una accuracy acceptable.
+
+Aquesta decisió ens va permetre obtenir models amb un millor rendiment global, adaptats a les necessitats específiques del projecte, sense comprometre excessivament cap de les dues mètriques clau.
 
 ## **Reproducció del Projecte**
 
