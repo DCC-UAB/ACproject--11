@@ -3,11 +3,66 @@
 
 # Detecció d'Ictus a Través de Models de Machine Learning
 
+# **Context Mèdic**
+
+L'ictus, o accident cerebrovascular, és una de les principals causes de mort i discapacitat arreu del món. Es produeix quan el subministrament de sang al cervell es veu interromput, causant danys cerebrals que poden ser irreversibles si no es detecten i tracten ràpidament. Hi ha dos tipus principals d'ictus: isquèmic (causat per un bloqueig) i hemorràgic (causat per un vessament de sang al cervell).
+
+Factors de risc com hipertensió, diabetis, obesitat, hàbits de vida no saludables i antecedents mèdics familiars augmenten significativament la probabilitat de patir un ictus. Tot i això, moltes persones amb risc no tenen accés a diagnòstics preventius o assistència mèdica regular.
+
+A través de l'ús de dades demogràfiques i mèdiques bàsiques, aquest projecte busca aprofitar la intel·ligència artificial per omplir aquest buit i oferir eines per a la detecció precoç i accessible, especialment en comunitats amb recursos limitats.
+
+---
+# **Objectius Del Projecte**
+
+La detecció d'ictus és un repte crític en l'àmbit mèdic, ja que la seva identificació precoç pot salvar vides i reduir danys irreversibles. A través de l'ús de models de Machine Learning, aquest projecte pretén aportar una eina que ajudi a identificar pacients amb risc d'ictus a partir de dades clíniques i demogràfiques. 
+
+El projecte posa especial èmfasi en dos aspectes:
+1. **Accesibilitat**: Estudiar si models menys dependents de dades estrictament mèdiques poden oferir una detecció preliminar fiable.
+2. **Eficàcia**: Prioritzar el record (recall) en les prediccions per assegurar una detecció òptima dels casos positius, reduint al mínim el risc de falsos negatius.
+
+Aquest enfocament té el potencial d'ampliar l'abast de les eines diagnòstiques a entorns amb recursos limitats, oferint una solució preventiva que pugui salvar vides.
+
+# **Planificació del Treball**
+
+La planificació d'aquest projecte es va dividir en diverses fases per garantir un desenvolupament estructurat i eficient. Cada etapa es va completar seguint un cronograma preestablert i ajustant les tasques en funció dels resultats obtinguts i els desafiaments trobats. A continuació, es detallen les principals fases del projecte:
+
+## **Fase 1: Preparació del Dataset**   
+- **Tasques realitzades**:
+  1. Exploració inicial del dataset per entendre les característiques i les seves distribucions.
+  2. Tractament de valors manquants i anomalies, com dades extremes o inconsistents.
+  3. Codificació de variables categòriques per facilitar el seu ús en models de Machine Learning.
+  4. Divisió del dataset en conjunts d’entrenament, validació i test.
+  5. Aplicació de tècniques per abordar el desbalanceig de classes, com SMOTE.
+
 ---
 
-## **Objectiu del Projecte**
-Aquest projecte té com a finalitat desenvolupar models de Machine Learning per detectar casos d'ictus (stroke) utilitzant dades clíniques. L'objectiu principal és determinar si els models poden identificar casos d'ictus amb precisió i si també poden fer-ho utilitzant exclusivament característiques que no es consideren del tipus médic. Aquest enfocament podria facilitar una detecció preliminar que permeti prevenir riscos de forma més accessible i eficient, així com permetre a les persones sense accessibilitat a recursos médics detectar si son proactius a patir un ictus.
+## **Fase 2: Selecció i Entrenament de Models**   
+- **Tasques realitzades**:
+  1. Definició dels algoritmes inicials a utilitzar: Logistic Regression, Random Forest, KNN, Naive Bayes, AdaBoost i XGBoost.
+  2. Entrenament dels models amb els conjunts de dades preparats.
+  3. Avaluació preliminar dels models utilitzant mètriques com Accuracy, Recall i AUC-ROC.
+---
 
+## **Fase 3: Optimització i Avaluació**  
+- **Tasques realitzades**:
+  1. Ajust del threshold dels models per prioritzar el recall en detriment d’altres mètriques, assegurant la detecció dels casos positius.
+  2. Comparació dels resultats amb i sense certes característiques per identificar-ne l’impacte en el rendiment dels models.
+  3. Generació de gràfics comparatius, com les corbes ROC i matrius de confusió, per analitzar les diferències entre models.
+---
+
+
+## **Fase 4: Visualització i Interpretació dels Resultats**  
+- **Tasques realitzades**:
+  1. Creació de gràfics de suport per il·lustrar els resultats obtinguts.
+  2. Interpretació de les mètriques per destacar els punts forts i les limitacions de cada model.
+  3. Redacció de conclusions basades en els resultats i en la viabilitat d’aplicar els models en entorns clínics i no clínics.
+---
+
+## **Fase 5: Redacció i Presentació**  
+- **Tasques realitzades**:
+  1. Documentació de tot el procés i resultats en aquest README.
+  2. Preparació d’una presentació clara i concisa per exposar el projecte en 10 minuts, seguint un esquema lògic i amb suport visual.
+  3. Assaigs previs de la presentació per ajustar el temps i anticipar preguntes.
 ---
 
 ## **Dataset Utilitzat**
@@ -41,7 +96,6 @@ El dataset presentava un desbalanceig significatiu: només aproximadament 250 ca
   - `graphs_module`: Genera gràfics com ROC curves.
 
 ---
-
 ## **Models de Classificació Aplicats**
 1. Logistic Regression
 2. Random Forest
@@ -75,16 +129,18 @@ Per aquestes raons, vam decidir no implementar GridSearchCV en la nostra metodol
 
 Aquesta decisió ens va permetre obtenir models amb un millor rendiment global, adaptats a les necessitats específiques del projecte, sense comprometre excessivament cap de les dues mètriques clau.
 
-## **Reproducció del Projecte**
+# **Reproducció del Projecte**
 
-### **Requisits**
-1. **Python 3.8+**.
-2. Llibreries necessàries (es poden instal·lar amb `pip`):
+Aquest apartat detalla com reproduir el projecte pas a pas i com accedir als resultats obtinguts. Hem dissenyat el projecte perquè sigui fàcil d'executar per a qualsevol persona amb coneixements bàsics de Python i Machine Learning.
+
+## **Requisits**
+1. **Python 3.8+**  
+   Per executar els scripts i notebooks, cal tenir instal·lada una versió moderna de Python (3.8 o superior). Podeu descarregar-lo des de [python.org](https://www.python.org/).  
+
+2. **Llibreries necessàries**  
+   Les dependències es poden instal·lar fàcilment executant la següent comanda al terminal des del directori principal del projecte:  
    ```bash
    pip install -r requirements.txt
-   ```
-
----
 
 ## **Resultats**
 Els resultats inclouen:
