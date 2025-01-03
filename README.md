@@ -96,7 +96,7 @@ El dataset presentava un desbalanceig significatiu: només aproximadament 250 ca
   - `graphs_module`: Genera gràfics com ROC curves.
 
 ---
-## **Models de Classificació Aplicats**
+## **Models d'AC Aplicats**
 1. Logistic Regression
 2. Random Forest
 3. Naive Bayes
@@ -104,14 +104,14 @@ El dataset presentava un desbalanceig significatiu: només aproximadament 250 ca
 5. AdaBoost
 6. XGBoost
 
-Els models es van avaluar amb i sense les característiques següents:
+Els models es van avaluar, per una banda amb totes les característiques, i per altra amb les següents columnes excloses:
 - `bmi`
 - `obesity`
 - `avg_glucose_level`
 - `hypertension`
 - `heart_disease`
 
-Els criteris d'èxit incloïen la precisió (`accuracy`), el **recall** (prioritzat en aquest projecte), i l'àrea sota la corba ROC (AUC-ROC).
+Els criteris d'èxit incloïen la accuracy, el recall (prioritzat en aquest projecte), i l'àrea sota la corba ROC (AUC-ROC) per a una supervisió d’un comportament esperat.
 
 ## **Justificació de la No Implementació de Grid Search**
 
