@@ -170,7 +170,36 @@ Els resultats inclouen:
   <img src="notebooks_and_scripts/ROC_Data/ROC_comparison_XGBoost.png" alt="XGBoost ROC" width="400"/>
 </div>
 
-### **Observació Inicial**
+# Observació dels Resultats
+
+Per analitzar el rendiment dels models en diferents condicions, vam generar gràfiques ROC tant utilitzant totes les característiques com després de reduir-les. Aquestes comparatives ens permeten entendre millor com afecta la quantitat d'informació disponible a la capacitat predictiva dels models, i identificar quins són més sensibles o robustos davant aquests canvis.
+
+## Observacions sobre les gràfiques ROC comparant tots els models
+
+### Comparativa amb totes les característiques
+- Les gràfiques ROC mostren que, quan s'utilitzen totes les característiques disponibles, els models tenen una capacitat notable de predicció d'ictus. Això es tradueix en corbes més properes a l'angle superior esquerre, indicant una elevada sensibilitat i especificitat.
+- Tant la **Regressió Logística** com **XGBoost** aconsegueixen àrees sota la corba (AUC) altes, destacant com els models més eficients del conjunt.
+
+### Comparativa amb reducció de característiques
+- Quan es redueixen les característiques, sorprenentment, els models continuen sent capaços de predir ictus amb un grau de fiabilitat raonable. 
+- Aquest resultat suggereix que les característiques de caràcter mèdic tenen menys pes del que es pensava inicialment.
+
+## Observacions sobre les gràfiques ROC entre models
+
+Per avaluar com afecta la reducció de característiques al rendiment dels models, vam decidir generar gràfiques ROC que comparen cada model abans i després d’eliminar característiques. Aquest enfocament ens permet analitzar visualment com canvia la capacitat predictiva dels models, ajudant-nos a identificar quins són més robustos davant la pèrdua d'informació.
+
+### Models que van millorar
+- **KNN** i **XGBoost** van mostrar una millora inesperada en la seva capacitat predictiva. Això pot ser degut a l'eliminació de variables sorolloses que afectaven negativament el rendiment.
+- La simplificació del conjunt de dades sembla haver optimitzat la seva eficàcia.
+
+### Models que van empitjorar
+- **Naive Bayes** i **Random Forest** van experimentar una disminució notable en el rendiment. 
+- Com s'esperava, la pèrdua d'informació va tenir un impacte negatiu, especialment en aquests models, que depenen fortament d'un conjunt de dades complet i ric en característiques per maximitzar la seva precisió.
+
+### Models equilibrats
+- **Regressió Logística** i **AdaBoost** van mantenir un rendiment relativament equilibrat. 
+- Aquest comportament indica que aquests models són menys sensibles a la pèrdua d'informació, probablement gràcies a la seva naturalesa estadística o al seu disseny per gestionar dades menys complexes.
+  
 Els models mostren una disminució de la precisió quan es redueixen les característiques, tot i que encara és possible detectar ictus amb una fiabilitat raonable. Els models de Regressió Logística i XGBoost van ser els més robustos, especialment quan es prioritzava el recall.
 
 ---
